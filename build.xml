@@ -56,9 +56,6 @@
 			 </classpath>-->
 			<xmlfileset dir="${home}" includes="testng.xml"/>
 		</testng>
-		<reporter classname="org.testng.reporters.XMLReporter">
-                   <property name="generateTestResultAttributes" value="true"/>
-        </reporter>
 		<exec executable="${browser}" spawn="true">
 		    <arg value="${testng.report}"/>
 		</exec>
