@@ -6,7 +6,7 @@
 	<property name="src.dir" value="${home}/src"/>
 	<property name="ng.output" value="${home}/test-output"/>
 	<property name="jar" value="C:\Users\Quang Do\Downloads\Selenium\jar"/>
-	<property name="testng.report" value="C:\Users\Quang Do\Selenium\ProjectWF\test-output\index.html"/>
+	<property name="testng.report" value="${home}/test-output/index.html"/>
 	<property name="browser" value="C:\Program Files (x86)\Mozilla Firefox\firefox.exe"/>
 	
 	
