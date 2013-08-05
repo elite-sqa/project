@@ -56,9 +56,6 @@
 			 </classpath>-->
 			<xmlfileset dir="${home}" includes="testng.xml"/>
 		</testng>
-		<exec executable="${browser}" spawn="true">
-		    <arg value="${testng.report}"/>
-		</exec>
 	</target>
 
 	
