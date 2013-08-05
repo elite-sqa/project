@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="6" name="Failed suite [Learning]" parallel="tests">
+  <parameter name="Browser" value="IE"/>
+  <test name="IE Test(failed)" parallel="tests">
+    <parameter name="Browser" value="IE"/>
+    <classes>
+      <class name="com.ecalix.tests.LoginTest">
+        <methods>
+          <include name="Open"/>
+          <include name="Open"/>
+          <include name="Open"/>
+          <include name="Logout" invocation-numbers="0"/>
+          <include name="Login" invocation-numbers="0"/>
+          <include name="Close"/>
+          <include name="Close"/>
+          <include name="Close"/>
+        </methods>
+      </class> <!-- com.ecalix.tests.LoginTest -->
+    </classes>
+  </test> <!-- IE Test(failed) -->
+  <test name="CR Test(failed)" parallel="tests">
+    <parameter name="Browser" value="Chrome"/>
+    <classes>
+      <class name="com.ecalix.tests.LoginTest">
+        <methods>
+          <include name="Open"/>
+          <include name="Open"/>
+          <include name="Open"/>
+          <include name="Logout" invocation-numbers="0"/>
+          <include name="Close"/>
+          <include name="Close"/>
+          <include name="Close"/>
+        </methods>
+      </class> <!-- com.ecalix.tests.LoginTest -->
+    </classes>
+  </test> <!-- CR Test(failed) -->
+  <test name="FF Test(failed)" parallel="tests">
+    <parameter name="Browser" value="FireFox"/>
+    <groups>
+      <run>
+        <include name="g"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="com.ecalix.tests.LoginTest">
+        <methods>
+          <include name="Open"/>
+          <include name="Open"/>
+          <include name="Open"/>
+          <include name="Logout" invocation-numbers="0"/>
+          <include name="Close"/>
+          <include name="Close"/>
+          <include name="Close"/>
+        </methods>
+      </class> <!-- com.ecalix.tests.LoginTest -->
+    </classes>
+  </test> <!-- FF Test(failed) -->
+</suite> <!-- Failed suite [Learning] -->

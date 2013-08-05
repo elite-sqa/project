@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<project name="learning ant" basedir="." default="main">
+		
+	<property name="home" value="${basedir}"/>
+	<property name="build.dir" value="${home}/build"/>
+	<property name="src.dir" value="${home}/src"/>
+	<property name="ng.output" value="${home}/test-output"/>
+	<property name="jar" value="C:\Users\Quang Do\Downloads\Selenium\jar"/>
+	<property name="testng.report" value="C:\Users\Quang Do\Selenium\ProjectWF\test-output\index.html"/>
+	<property name="browser" value="C:\Program Files (x86)\Mozilla Firefox\firefox.exe"/>
+	
+	
+    <target name="setClassPath">
+    	<path id="jar.classpath">
+			<fileset dir="${jar}">
+				<include name="*.jar"/>
+    		</fileset>
+    	</path>
+    	<pathconvert pathsep=";" property="jar.path" refid="jar.classpath"/>
+    </target>
+	
+	 <target name="everything" depends="setClassPath">
+	    <echo>
+	    	${toString:jar.classpath}
+	    </echo>
+	  </target>
+	
+	<target name="clean">	
+		<delete dir="${build.dir}"/>
+	</target>
+	
+	<!--testng.jar file for ant-->
+	<target name="init">
+		<taskdef name="testng" classpath="${jar.path}"
+		               classname="org.testng.TestNGAntTask" />
+	</target>
+		
+	
+	<target name="compile" depends="clean, setClassPath, init">
+		<mkdir dir="${build.dir}"/>
+		<javac debug="true" srcdir="${src.dir}" destdir="${build.dir}" classpath="${jar.path}"/>
+	</target>
+	
+	<path id="testng.path">  
+	    <pathelement path="${jar.path}"/>  
+	    <pathelement path="${build.dir}"/>  
+	  </path>  
+	
+	<!--classpath="${jar.path}:${build.dir}" //3 ways to call classpath-->
+	<target name="run" depends="compile">
+		<testng suitename="Learning">
+			<classpath refid="testng.path"/>
+			<!--<classpath>
+			        <pathelement path="${jar.path}/"/>
+			        <pathelement path="${build.dir}"/>
+			 </classpath>-->
+			<xmlfileset dir="${home}" includes="testng.xml"/>
+		</testng>
+		<exec executable="${browser}" spawn="true">
+		    <arg value="${testng.report}"/>
+		</exec>
+	</target>
+
+	
+
+	<target name="main">
+			<echo>Main</echo>
+		</target>
+	
+	<!--
+	<javac destdir="${dest}" classpath="${classpath}" includeantruntime="false">
+	    <src path="${src1}"/>
+	    <src path="${src2}"/>
+	  </javac>
+	-->
+
+</project>
+
+

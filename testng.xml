@@ -1,0 +1,32 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+  
+<suite name="Learning" verbose="1" parallel="tests" thread-count="6" >
+  
+  <test name="FF Test" >
+  <parameter name="Browser" value="FireFox"/>
+ 	<groups>
+      <run>
+        <include name="g"/>
+      </run>
+    </groups>
+    <packages>
+      <package name="com.ecalix.tests" />
+   </packages>
+  </test>
+  
+ 
+ <test name="CR Test" >
+  <parameter name="Browser" value="Chrome"/>
+    <classes>
+       <class name="com.ecalix.tests.LoginTest" />
+    </classes>
+  </test> 
+  
+  <test name="IE Test" >
+  <parameter name="Browser" value="IE"/>
+    <classes>
+       <class name="com.ecalix.tests.LoginTest" />
+    </classes>
+  </test> 
+  
+</suite>
