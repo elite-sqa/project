@@ -1,3 +1,3 @@
 #This is READ ME for project
 
-change facebook accoutn and use FF profiles
+change facebook account and use FF profile
