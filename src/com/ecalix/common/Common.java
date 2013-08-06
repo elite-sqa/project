@@ -45,7 +45,9 @@ public class Common {
 		
 		if (browser.equalsIgnoreCase("FireFox")) {
 			
-			driver = new FirefoxDriver();
+			ProfilesIni allProfiles = new ProfilesIni();
+			FirefoxProfile profile = allProfiles.getProfile("qd0411");
+			driver = new FirefoxDriver(profile);
 			/*
 			FirefoxProfile profile = new FirefoxProfile();   
 			profile.setEnableNativeEvents(true);     

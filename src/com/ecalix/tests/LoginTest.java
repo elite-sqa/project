@@ -86,13 +86,13 @@ public class LoginTest{
 		//handle not found error
 		try{
 			wait.until(ExpectedConditions.visibilityOf(page.getUsername()));
-			page.EnterUsername("uzumaki_hyuga@yahoo.com");
+			page.EnterUsername("samurai_9x@yahoo.com.vn");
 		}
 		catch(NoSuchElementException e)
 		{
 			driver.manage().deleteAllCookies();
 			c.NavigateURL("https://www.facebook.com/");
-			page.EnterUsername("uzumaki_hyuga@yahoo.com");
+			page.EnterUsername("samurai_9x@yahoo.com.vn");
 		}
 		
 		page.EnterPass("yen1307");
